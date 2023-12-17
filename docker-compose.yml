@@ -1,0 +1,15 @@
+services:
+  dev-db:
+    image: postgres:latest
+    container_name: football_backend_postgres_container
+    ports:
+      - "5434:5432"
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: 123
+      POSTGRES_DB: football_db
+    volumes:
+      - football_backend_postgres_data:/var/lib/postgresql/data
+
+volumes:
+  football_backend_postgres_data:
